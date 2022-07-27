@@ -1,0 +1,616 @@
+<script src="../turbo-themes/pagewrapper/wp-content/themes/theme/dist/scripts/main.js" type="text/javascript"></script>
+<!--<script src="../turbo-themes/pagewrapper/wp-includes/js/wp-embed.min.js?ver=4.9.4" type="text/javascript"></script>-->
+<script src="../turbo-themes/pagewrapper/wp-content/themes/theme/dist/scripts/jquery.jfontsize-2.0.js" type="text/javascript"></script>
+<!-- Font Resizer -->
+<script type="text/javascript">
+  (function($) {
+    $('.bbi-content-section p').jfontsize({
+      btnMinusClasseId: '#jfontsize-minus',
+      btnDefaultClasseId: '#jfontsize-default',
+      btnPlusClasseId: '#jfontsize-plus',
+      btnMinusMaxHits: 1,
+      btnPlusMaxHits: 5,
+      sizeChange: 5
+    });
+  })(jQuery);
+
+
+  (function($) {
+    $('.bbi-content-section').jfontsize({
+      btnMinusClasseId: '#jfontsize-minus',
+      btnDefaultClasseId: '#jfontsize-default',
+      btnPlusClasseId: '#jfontsize-plus',
+      btnMinusMaxHits: 1,
+      btnPlusMaxHits: 5,
+      sizeChange: 5
+    });
+  })(jQuery);
+
+
+  (function($) {
+    $('.bbi-content-section label').jfontsize({
+      btnMinusClasseId: '#jfontsize-minus',
+      btnDefaultClasseId: '#jfontsize-default',
+      btnPlusClasseId: '#jfontsize-plus',
+      btnMinusMaxHits: 1,
+      btnPlusMaxHits: 5,
+      sizeChange: 5
+    });
+  })(jQuery);
+
+
+  (function($) {
+    $('.bbi-content-section span').jfontsize({
+      btnMinusClasseId: '#jfontsize-minus',
+      btnDefaultClasseId: '#jfontsize-default',
+      btnPlusClasseId: '#jfontsize-plus',
+      btnMinusMaxHits: 1,
+      btnPlusMaxHits: 5,
+      sizeChange: 5
+    });
+  })(jQuery);
+
+
+  (function($) {
+    $('.bbi-content-section td').jfontsize({
+      btnMinusClasseId: '#jfontsize-minus',
+      btnDefaultClasseId: '#jfontsize-default',
+      btnPlusClasseId: '#jfontsize-plus',
+      btnMinusMaxHits: 1,
+      btnPlusMaxHits: 5,
+      sizeChange: 5
+    });
+  })(jQuery);
+
+
+  (function($) {
+    $('.bbi-content-section div').jfontsize({
+      btnMinusClasseId: '#jfontsize-minus',
+      btnDefaultClasseId: '#jfontsize-default',
+      btnPlusClasseId: '#jfontsize-plus',
+      btnMinusMaxHits: 1,
+      btnPlusMaxHits: 5,
+      sizeChange: 5
+    });
+  })(jQuery);
+</script>
+[[?x1x9x1009x1022x1032x1044x1046x::x[[S4]]x::
+<script src="//code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  Y.use('jquery-noconflict', function() {
+    jQuery(document).ready(function() {
+
+      // Update payment type toggle to use newer jQuery library
+      //Count payment options
+      jQuery('.internal-payment span.payment-type-option').each(function(i) {
+        jQuery(this).addClass('payment-option-' + (i + 1));
+      });
+      //Set default positions
+      jQuery('#payment_cc_container').show();
+      jQuery('.payment-option-1').addClass('selected');
+      jQuery('#payment_bank_container').hide();
+      //Click hide/show functions
+      jQuery('.payment-option-1').on('click touchend', function(e) {
+        e.preventDefault();
+        jQuery('.payment-type-option.selected').removeClass('selected');
+        jQuery(this).addClass('selected');
+        jQuery('#payment_cc_container').addClass('showmethemoney').removeClass('hide').css('display', 'inline-block');
+        jQuery('#payment_bank_container').removeClass('showmethemoney').addClass('hide').css('display', 'none');
+        if (jQuery('#responsive_payment_typepay_typeradioach').attr('checked') === true) {
+          jQuery('#responsive_payment_typepay_typeradioach').prop('checked', false).change();
+        }
+        if (jQuery('#responsive_payment_typepay_typeradiopaypal').attr('checked') === true) {
+          jQuery('#responsive_payment_typepay_typeradiopaypal').prop('checked', false).change();
+        }
+      });
+
+      jQuery('label[for="payment_typepay_typeradiocredit"] a').on('click touchend', function(e) {
+        e.preventDefault();
+        jQuery('.payment-type-option.selected').removeClass('selected');
+        jQuery(this).parent('.internal-payment').children('.payment-type-option').addClass('selected');
+        jQuery('#payment_cc_container').addClass('showmethemoney').removeClass('hide').css('display', 'inline-block');
+        jQuery('#payment_bank_container').removeClass('showmethemoney').addClass('hide').css('display', 'none');
+        if (jQuery('#payment_typepay_typeradioach').attr('checked') === true) {
+          jQuery('#payment_typepay_typeradioach').prop('checked', false).change();
+        }
+        if (jQuery('#payment_typepay_typeradiopaypal').attr('checked') === true) {
+          jQuery('#payment_typepay_typeradiopaypal').prop('checked', false).change();
+        }
+      });
+
+      jQuery('.payment-option-2').on('click touchend', function(e) {
+        e.preventDefault();
+        jQuery('.payment-type-option.selected').removeClass('selected');
+        jQuery(this).addClass('selected');
+        jQuery('#payment_cc_container').removeClass('showmethemoney').addClass('hide').css('display', 'none');
+        jQuery('#payment_bank_container').addClass('showmethemoney').removeClass('hide').css('display', 'inline-block');
+        if (jQuery('#responsive_payment_typepay_typeradiocredit').attr('checked') === true) {
+          jQuery('#responsive_payment_typepay_typeradiocredit').prop('checked', false).change();
+        }
+        if (jQuery('#responsive_payment_typepay_typeradiopaypal').attr('checked') === true) {
+          jQuery('#responsive_payment_typepay_typeradiopaypal').prop('checked', false).change();
+        }
+      });
+
+      jQuery('label[for="payment_typepay_typeradioach"] a').on('click touchend', function(e) {
+        e.preventDefault();
+        jQuery('.payment-type-option.selected').removeClass('selected');
+        jQuery(this).parent('.internal-payment').children('.payment-type-option').addClass('selected');
+        jQuery('#payment_cc_container').removeClass('showmethemoney').addClass('hide').css('display', 'none');
+        jQuery('#payment_bank_container').addClass('showmethemoney').removeClass('hide').css('display', 'inline-block');
+        if (jQuery('#payment_typepay_typeradiocredit').attr('checked') === true) {
+          jQuery('#payment_typepay_typeradiocredit').prop('checked', false).change();
+        }
+        if (jQuery('#payment_typepay_typeradiopaypal').attr('checked') === true) {
+          jQuery('#payment_typepay_typeradiopaypal').prop('checked', false).change();
+        }
+      });
+
+      jQuery('.external-payment .payment-type-option').on('click touchend', function(e) {
+        e.preventDefault();
+        jQuery('.payment-type-option.selected').removeClass('selected');
+        jQuery(this).addClass('selected');
+        jQuery('#payment_cc_container').removeClass('showmethemoney').addClass('hide').css('display', 'none');
+        jQuery('#payment_bank_container').removeClass('showmethemoney').addClass('hide').css('display', 'none');
+        if (jQuery('#responsive_payment_typepay_typeradiocredit').attr('checked') === true) {
+          jQuery('#responsive_payment_typepay_typeradiocredit').prop('checked', false).change();
+        }
+        if (jQuery('#responsive_payment_typepay_typeradioach').attr('checked') === true) {
+          jQuery('#responsive_payment_typepay_typeradioach').prop('checked', false).change();
+        }
+      });
+
+      jQuery('label[for="payment_typepay_typeradiopaypal"] a').on('click touchend', function(e) {
+        e.preventDefault();
+        jQuery('.payment-type-option.selected').removeClass('selected');
+        jQuery(this).parent('.external-payment').children('.payment-type-option').addClass('selected');
+        jQuery('#payment_cc_container').removeClass('showmethemoney').addClass('hide').css('display', 'none');
+        jQuery('#payment_bank_container').removeClass('showmethemoney').addClass('hide').css('display', 'none');
+        if (jQuery('#payment_typepay_typeradiocredit').attr('checked') === true) {
+          jQuery('#payment_typepay_typeradiocredit').prop('checked', false).change();
+        }
+        if (jQuery('#payment_typepay_typeradioach').attr('checked') === true) {
+          jQuery('#payment_typepay_typeradioach').prop('checked', false).change();
+        }
+      });
+
+    });
+  });
+</script>
+::
+<script src="//code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+]]
+<script src="//cdnjs.cloudflare.com/ajax/libs/luminateExtend/1.8.1/luminateExtend.min.js"></script>
+<script type="text/javascript">
+  var jQuery = jQuery.noConflict(true);
+  var BBI = {
+    pageName: "<convio:session param="
+    pg " name="
+    334 "></convio:session>",
+    trID: "<convio:session param="
+    trID " name="
+    80 "></convio:session>"
+  };
+  jQuery(function($) {
+    luminateExtend.init({
+      apiKey: '<convio:session param="CONVIO_API_KEY" name="100"></convio:session>',
+      path: {
+        nonsecure: 'http://<convio:session param="DOMAIN" name="29"></convio:session><convio:session param="PATH" name="29"></convio:session>',
+        secure: 'https://<convio:session param="SECURE_DOMAIN" name="29"></convio:session><convio:session param="SECURE_PATH" name="29"></convio:session>'
+      }
+    });
+  });
+</script>
+<script src="../turbo-themes/pagewrapper/wp-content/themes/theme/dist/scripts/lo_ywca_pw.js"></script>
+<!-- find me [[S8]] -->
+[[?x[[S8]]X::YWCA_Map::
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+<script src="../map/scripts/markercluster.js"></script>
+<script src="../map/scripts/main.js"></script>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBalHlNJ2OUKw720WWIjOrPz9iLl8dVNDA&amp;libraries=geometry,places&amp;callback=initMap" type="text/javascript"></script>
+::]]
+<!-- Donation Buttons -->
+[[?x1x9x1009x1022x1044x1046x::x[[S4]]x::
+<style type="text/css">
+  <!--
+  /* donatin form button css */
+  div.donation-level-input-container {
+    color: #fa4616;
+    font-size: 19px;
+    height: 45px;
+    width: 90px;
+    text-align: center;
+    cursor: pointer;
+    background: #fff;
+    padding: 0;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0;
+    border: 3px solid #fa4616;
+  }
+
+  div.donation-level-input-container label {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+  }
+
+  div.donation-level-input-container.active,
+  div.donation-level-input-container:hover {
+    border-color: #fa4616;
+    background-color: #fa4616;
+    background-image: none;
+    color: #ffffff;
+  }
+
+  div.donation-level-container input[type="radio"] {
+    position: absolute;
+    /* top: 0; */
+    left: -99999px;
+  }
+
+  div.donation-level-container:last-child {
+    margin-right: 80px;
+  }
+
+  /*
+div.donation-level-container:last-child div.donation-level-input-container {
+    border: 0;
+    background: none;
+}
+*/
+  div.donation-level-user-entered {
+    margin: 0 !important;
+  }
+
+  div.donation-level-input-container.form-input div.donation-level-user-entered input {
+    height: 46px;
+    width: 135px;
+    text-align: left;
+    background-color: #FFFFFF;
+    border: 3px solid #fa4616;
+    box-shadow: none;
+    color: #666666;
+    border-radius: 0;
+    font-size: .95em;
+  }
+
+  div.donation-level-container:last-child .form-input div.donation-level-user-entered input {
+    position: relative;
+    left: 42px;
+    top: -4px;
+  }
+
+  @media(max-width: 767px) {
+
+    div.donation-level-input-container.form-input div.donation-level-user-entered input,
+    div.donation-level-input-container {
+      width: 100%;
+    }
+
+
+    div.donation-level-container:last-child .form-input div.donation-level-user-entered input {
+
+      left: 0;
+      top: 29px;
+    }
+
+    div.responsive input[type="text"],
+    div.responsive input[type="number"],
+    div.responsive input[type="password"],
+    div.responsive input[type="select"],
+    div.responsive input[type="option"],
+    div.responsive textarea {
+      width: 100% !important;
+    }
+
+
+  }
+
+
+  div.donation-level-input-container.form-input div.donation-level-user-entered input {
+    position: relative;
+  }
+
+  /*label + div.donation-level-user-entered {
+    display: inline-block;
+    margin: 0px 0px 0px 0px;
+    position: relative;
+    top: -37px;
+    left: 40px;
+}*/
+
+
+  @media only screen and (max-width: 991px) {
+    div.donation-level-container {
+      float: left !important;
+    }
+
+    div.donation-level-container {
+      margin-right: 0;
+    }
+
+  }
+
+
+  @media(max-width: 992px) {
+    /*label + div.donation-level-user-entered {
+    display: block;
+    top: -96px;
+    left: 45px;
+}*/
+
+
+    label+div.donation-level-user-entered {
+      display: block;
+      margin: 0;
+      position: relative;
+      top: 0;
+      left: 3px;
+      /*float: none;*/
+    }
+
+
+
+  }
+
+  @media (max-width: 767px) {
+
+    div.donation-level-container {
+      float: none !important;
+    }
+
+
+    div.donation-level-container:last-child .form-input div.donation-level-user-entered input {
+      display: block;
+      top: 0;
+      left: 0;
+    }
+
+    div.donation-level-container:last-child {
+      margin-right: 0;
+    }
+
+  }
+
+
+  /*hide other amount*/
+  div.donation-level-label-container {
+    display: none;
+  }
+
+
+  div.form-input-choose-block,
+  div.donation-level-label-input-container {
+    display: block;
+  }
+
+
+
+
+  /* Honoree Section */
+
+  @media (min-width: 768px) {
+
+    #tribute_honoree_first_name_row,
+    #tribute_honoree_last_name_row,
+    #donor_first_name_row,
+    #donor_last_name_row,
+    #tribute_notify_recip_street1_row,
+    #tribute_notify_recip_street2_row {
+      float: none !important;
+      margin-right: 10px;
+      display: inline-block;
+      width: 45%;
+    }
+
+    #tribute_notify_recip_title_row {
+      float: none !important;
+      margin-right: 10px;
+      display: inline-block;
+      width: 25%;
+    }
+
+    #tribute_notify_recip_name_row {
+      float: none !important;
+      margin-right: 10px;
+      display: inline-block;
+      width: 65%;
+    }
+
+    #tribute_notify_recip_city_row,
+    #tribute_notify_recip_state_row,
+    #tribute_notify_recip_zip_row,
+    #tribute_notify_recip_country_row {
+      display: inline-block;
+      width: 45%;
+      margin-right: 10px;
+    }
+
+    #tribute_message_closing_row,
+    #tribute_signature_row,
+    #ecard_recpients_row,
+    #tribute_ecard_subject_row,
+    #tribute_ecard_subject_row,
+    #tribute_ecard_message_row {
+      width: 92%;
+    }
+  }
+
+
+  div.donation-level-container:nth-child(6)>.form-content>.donation-level-input-container {
+    border: 0;
+    background: none;
+  }
+  -->
+</style>
+<script type="text/javascript">
+  Y.use('jquery-noconflict', function() {
+        jQuery(document).ready(function($) {
+          console.log('jQuery has loaded');
+
+          [
+            [ ? [
+                [S334: df_id]
+              ]::2400::::$('input:radio[id^="level_"]').removeAttr('checked'); // Clear all selected levels on page load]]
+
+              var sectionrow = '<div id="giving" class="row"></div>';
+              $('.donation-level-amount-container').each(function() {
+                $(this).html($(this).html().replace(".000", "").replace(".00", "").replace(".0", ""));
+              });
+              //Apply error class for error handling
+              $('span.field-required').parent().addClass('field-required');
+
+              //Check for level pre-selected on page load
+              var $donLevel = $('input[name^="level_"]:radio:checked');
+              //console.log($donLevel);
+
+              if ($donLevel.val() != '') {
+                // console.log("Selected " + $donLevel);
+                $donLevel.parents('div.donation-level-input-container').addClass('active');
+              }
+
+              [
+                [ ? [
+                    [S334: df_id]
+                  ]::2400::
+                  // Prefill other amount
+                  var preSelectedAmount = '[[S334:set.Value]]';
+                  if (preSelectedAmount !== '' && $('.donation-level-container:last').find('input[name="level_standardexpanded"]').is(':checked')) {
+                    $('.donation-level-container:last').find('input[type="text"]').val(parseInt(preSelectedAmount / 100));
+                  }::
+                ]
+              ]
+
+              //Select level radio when label is clicked
+              $('div.donation-level-input-container').click(function() {
+                var $clickedAmount = $(this).children().children('.donation-level-amount-container').text();
+                //alert('level-input-container clicked');
+                //console.log("Selected " + $clickedAmount);
+                //$('input:radio[name=level_standardexpanded]').attr('checked',false);
+                //alert('unchecked');
+                $('div.donation-level-input-container.active').removeClass("active");
+                $('input:radio[id^="level_"]').removeAttr('checked');
+                $(this).closest('.donation-level-input-container').children().children('input:radio').prop('checked', true);
+
+                //alert('un-active');
+                //$('.donation-level-user-entered input').val("");
+                //$('.donation-level-user-entered input').attr('placeholder', 'Other Amount');
+                $(this).addClass('active');
+                //alert('class is active');
+                $(this).find('input:radio').attr('checked', true);
+                //alert('input is checked');
+
+                if ($(this).children('.donation-level-user-entered').length != 0) {
+                  $('.donation-level-user-entered input').attr('placeholder', '');
+                  $('.donation-level-user-entered input').val('');
+                } else {
+                  $('.donation-level-user-entered input').val('');
+                  $('.donation-level-user-entered input').attr('placeholder', 'Other Amount');
+                }
+                //console.log("amount div clicked");
+              });
+
+              //Other Amount on Focus remove placehlder and amount
+              // $('.donation-level-user-entered input').focus(function() {
+              //   $('.donation-level-user-entered input').attr('placeholder', '');
+              //   $('.donation-level-user-entered input').val('');
+              // });
+
+              $('.donation-level-user-entered input').focusout(function() {
+                var value = $('.donation-level-user-entered input').val();
+                if (value == '') {
+                  $('.donation-level-user-entered input').attr('placeholder', 'Other Amount');
+                  $("div.donation-level-input-container.active").removeClass('active');
+                }
+                // else {
+                //  $("div.donation-level-input-container.active").removeClass("active");
+                // }
+              });
+
+              //YUI close
+            });
+        });
+</script>
+<script type="text/javascript">
+  Y.use('jquery-noconflict', function() {
+    jQuery(document).ready(function() {
+
+      jQuery('.donation-level-amount-container').click(function(e) {
+        e.preventDefault();
+        jQuery('input:radio[id^="level_"]').removeAttr('checked');
+        jQuery(this).closest('.donation-level-input-container').children().children('input:radio').prop('checked', true);
+      });
+
+      jQuery('.donation-level-label-container').click(function(e) {
+        e.preventDefault();
+        jQuery('input:radio[id^="level_"]').removeAttr('checked');
+        jQuery(this).closest('.donation-level-input-container').children().children('input:radio').prop('checked', true);
+      });
+
+      jQuery('.donation-level-user-entered input').click(function(e) {
+        e.preventDefault();
+        jQuery('input:radio[id^="level_"]').removeAttr('checked');
+        jQuery(this).closest('.donation-level-input-container').children().children('input:radio').prop('checked', true);
+      });
+
+    });
+  });
+</script>
+<script type="text/javascript">
+  //jQuery('.donation-level-user-entered input').attr('type', 'number');
+  jQuery('.donation-level-user-entered input').attr('min', '0');
+  jQuery('.donation-level-user-entered input').attr('inputmode', 'numeric');
+  jQuery('.donation-level-user-entered input').attr('pattern', '[0-9]*');
+
+
+  jQuery('#billing_addr_zipname').attr('type', 'number');
+  jQuery('#billing_addr_zipname').attr('min', '0');
+  jQuery('#billing_addr_zipname').attr('inputmode', 'numeric');
+  jQuery('#billing_addr_zipname').attr('pattern', '[0-9]*');
+
+
+  jQuery('#responsive_payment_typecc_numbername').attr('type', 'number');
+  jQuery('#responsive_payment_typecc_numbername').attr('min', '0');
+  jQuery('#responsive_payment_typecc_numbername').attr('inputmode', 'numeric');
+  jQuery('#responsive_payment_typecc_numbername').attr('pattern', '[0-9]*');
+
+
+  jQuery('#responsive_payment_typecc_cvvname').attr('type', 'number');
+  jQuery('#responsive_payment_typecc_cvvname').attr('min', '0');
+  jQuery('#responsive_payment_typecc_cvvname').attr('inputmode', 'numeric');
+  jQuery('#responsive_payment_typecc_cvvname').attr('pattern', '[0-9]*');
+</script>
+[[S51:reus_ecard_toggle_expand_collapse]]
+[[S51:reus_footer_bb_scripts]]
+::]]
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+    jQuery('.escape').click(function() {
+      window.open("http://weather.com", "_newtab");
+      window.location.replace('http://google.com');
+    });
+
+    jQuery(".escape a").on("click", function(e) {
+      e.stopPropagation();
+    });
+
+    jQuery(document).keyup(function(e) {
+      if (e.keyCode == 27) { // escape key
+        window.open("http://weather.com", "_newtab");
+        window.location.replace('http://google.com');
+      }
+    });
+  });
+</script>
+[[?x1x9x1009x1022x1044x1046x::x[[S4]]x::
+<script type="text/javascript">
+  Y.use('jquery-noconflict', function() {
+    jQuery(document).ready(function() {
+      jQuery('#level_standard_row .donation-level-user-entered').prepend('<span class="otherAmountPre">$</span>');
+      jQuery('#level_standard_row .donation-level-user-entered').append('<span class="otherAmountPost">.00</span>');
+    });
+  });
+</script>
+::]]
